@@ -1,0 +1,22 @@
+{{ template "header.html" }}
+{{ template "menu.html" }}
+
+<div class="main posts-new">
+  <div class="container">
+    <h1 class="form-heading">投稿する</h1>
+    <div class="form">
+      <div class="form-body">
+        <div class="form-error">
+        </div>
+        <form action="/posts_new" method="post">
+          <input type="hidden" name="command" value="insert">
+          <!-- <?php if (isset($_SESSION['users'])): ?> -->
+            <input type="hidden" name="user_id" value="1">
+          <!-- <?php endif; ?> -->
+          <textarea name="content" value=""></textarea>
+          <input type="submit" value="投稿">
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

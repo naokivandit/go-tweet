@@ -1,0 +1,20 @@
+{{ template "header.html" }}
+{{ template "menu.html" }}
+
+<div class="main users-new">
+  <div class="container">
+    <div class="form-heading">ログイン</div>
+    <div class="form users-form">
+      <div class="form-body">
+        <div class="form-error"></div>
+        <form action="/login" method="post">
+          <p>メールアドレス</p>
+          <input type="text" name="email" value="">
+          <p>パスワード</p>
+          <input type="password" name="password">
+          <input type="submit" value="ログイン">
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

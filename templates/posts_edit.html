@@ -1,0 +1,21 @@
+{{ template "header.html" }}
+{{ template "menu.html" }}
+
+<div class="main posts-new">
+  <div class="container">
+    <h1 class="form-heading">編集する</h1>
+    <div class="form">
+      <div class="form-body">
+        <div class="form-error"></div>
+          <form action="posts" method="post">
+            <!-- <?php foreach ($sql->fetchAll() as $row): ?> -->
+              <input type="hidden" name="update" value="insert">
+              <input type="text" name="tweet_id" value="{{ .Id }}">
+              <textarea name="content">{{ .Content }}</textarea>
+            <!-- <?php endforeach ?> -->
+            <input type="submit" value="保存">
+          </form>
+      </div>
+    </div>
+  </div>
+</div>

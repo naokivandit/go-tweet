@@ -1,0 +1,27 @@
+{{ template "header.html" }}
+{{ template "menu.html" }}
+
+<!-- <?php foreach ($sql->fetchAll() as $row): ?> -->
+<div class="main posts-show">
+  <div class="container">
+    <div class="posts-show-item">
+      <div class="post-user-name">
+        <img src="img/{{ .Image }}">
+        <a href="user_show">{{ .Name }}</a>
+      </div>
+      <p>{{ .Content }}</p>
+      <div class="post-time">{{ .Created }}</div>
+      <!-- <span class="fa fa-heart like-btn-unlike"></span> -->
+      <!-- <span class="fa fa-heart like-btn">1</span> -->
+      <div class="post-menus">
+        <a href="posts_edit?tweet_id={{ .Id }}">編集</a>
+        <form action="posts" method="post">
+        <input type="hidden" name="delete" value="delete">
+        <input type="hidden" name="tweet_id" value="">
+        <input type="submit" value="削除">
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- <?php endforeach; ?> -->

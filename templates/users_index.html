@@ -1,0 +1,14 @@
+{{ template "header.html" }}
+{{ template "menu.html" }}
+
+<div class="main users-index">
+    <div class="container">
+        <h1 class="users-heading">ユーザー一覧</h1>
+        {{range .}}
+        <div class="users-index-item">
+            <div class="user-left"><img src="img/{{.Image}}"></div>
+            <div class="user-right"><a href="/user_show?user_id={{.Id}}">{{ .Name }}</a></div>
+        </div>
+        {{end}}
+    </div>
+</div>

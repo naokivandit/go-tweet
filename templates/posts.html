@@ -1,0 +1,18 @@
+{{ template "header.html" }}
+{{ template "menu.html" }}
+
+<div class="main posts-index">
+  <div class="container">
+    {{range .}}
+    <div class="posts-index-item">
+      <div class="post-left"><img src="img/{{.Image}}"></div>
+      <div class="post-right">
+        <div class="post-user-name"><a href="/user_show?user_id={{.Id}}">{{.Name}}</a></div>
+        <ul>
+            <li><a href="/posts_show?tweet_id={{.Tweet_id}}">{{.Content}}</a></li>
+        </ul>
+      </div>
+    </div>
+    {{end}}
+  </div>
+</div>

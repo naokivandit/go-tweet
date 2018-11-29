@@ -1,0 +1,28 @@
+{{ template "header.html" }}
+{{ template "menu.html" }}
+
+<div class="main users-edit">
+  <div class="container">
+    <div class="form-heading">アカウント編集</div>
+    <div class="form users-form">
+      <div class="form-body">
+        <div class="form-error"></div>
+        <form action="/user_edit?user_id={{ .Id }}" method="post">
+          <input type="hidden" name="update" value="update">
+          <!-- <?php if(isset($_SESSION['users'])) : ?> -->
+            <input type="text" name="id" value="{{ .Id }}">
+            <p>ユーザー名</p>
+            <input name="name" value="{{ .Name }}">
+            <p>画像</p>
+            <input name="image" type="file" value="">
+            <p>メールアドレス</p>
+            <input name="email" value="{{ .Email }}">
+            <p>パスワード</p>
+            <input type="password" name="password" value="{{ .Password }}">
+            <input type="submit" value="保存">
+          <!-- <?php endif; ?> -->
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
